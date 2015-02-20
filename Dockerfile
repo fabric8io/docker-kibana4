@@ -2,9 +2,11 @@ FROM debian:wheezy
 
 MAINTAINER Jimmi Dyson <jimmidyson@gmail.com>
 
-RUN apt-get update && apt-get install -y wget openjdk-7-jre-headless && rm -rf /var/lib/apt/lists/*
+ENV KIBANA_VERSION 4.0.0
 
-RUN wget -qO- https://download.elasticsearch.org/kibana/kibana/kibana-4.0.0-BETA2.tar.gz | tar xzv -C /opt && \
+RUN apt-get update && apt-get install -y wget ca-certificates && rm -rf /var/lib/apt/lists/*
+
+RUN wget -qO- https://download.elasticsearch.org/kibana/kibana/kibana-${KIBANA_VERSION}-linux-x64.tar.gz | tar xzv -C /opt && \
     ln -s /opt/kibana* /opt/kibana4
 
 ADD run.sh /run.sh
