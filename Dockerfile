@@ -2,8 +2,7 @@ FROM centos:7
 MAINTAINER Jimmi Dyson <jimmidyson@gmail.com>
 CMD ["/run.sh"]
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV KIBANA_VERSION 4.0.1
+ENV KIBANA_VERSION 4.0.2
 
 RUN yum install -y tar && yum clean all
 
