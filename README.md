@@ -2,7 +2,7 @@
 
 To configure the Elasticsearch URL pass in the environment variable `ELASTICSEARCH_URL`:
 
-    docker run -d -p 5601:5601 -e ELASTICSEARCH_URL=http://192.168.1.1:9200 jimmidyson/kibana4:latest
+    docker run -d -p 5601:5601 -e ELASTICSEARCH_URL=http://192.168.1.1:9200 fabric8/kibana4:latest
 
 If you’re running this under Kubernetes or OpenShift 3 then you can specify the Kubernetes
 service name via the `ELASTICSEARCH_SERVICE_NAME` environment variable instead - this will need to be in
@@ -22,8 +22,7 @@ apiVersion: v1beta1
           id: kibana-server
           containers:
             - name: kibana-image
-              image: jimmidyson/kibana4:latest
-              imagePullPolicy: PullIfNotPresent
+              image: fabric8/kibana4:latest
               ports:
                 - name: kibana-port
                   containerPort: 5601
