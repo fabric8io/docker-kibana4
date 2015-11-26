@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ -n "${ELASTICSEARCH_URL}" ]]; then
-    sed -i 's|^elasticsearch_url:.*$|elasticsearch_url: '"\"${ELASTICSEARCH_URL}\""'|' /opt/kibana4/config/kibana.yml
+    sed -i 's|^# elasticsearch\.url:.*$|elasticsearch.url: '"\"${ELASTICSEARCH_URL}\""'|' /opt/kibana4/config/kibana.yml
 elif [[ -n "${ELASTICSEARCH_SERVICE_NAME}" ]]; then
     SVC_HOST=${ELASTICSEARCH_SERVICE_NAME}_SERVICE_HOST
     SVC_PORT=${ELASTICSEARCH_SERVICE_NAME}_SERVICE_PORT
