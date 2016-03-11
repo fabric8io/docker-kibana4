@@ -2,7 +2,7 @@ FROM centos:7
 MAINTAINER Jimmi Dyson <jimmidyson@gmail.com>
 CMD ["/run.sh"]
 
-ENV KIBANA_VERSION 4.4.0
+ENV KIBANA_VERSION 4.4.2
 
 RUN curl https://download.elasticsearch.org/kibana/kibana/kibana-${KIBANA_VERSION}-linux-x64.tar.gz | tar xzv -C /opt && \
     ln -s /opt/kibana* /opt/kibana4 && \
